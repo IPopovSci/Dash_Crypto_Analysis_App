@@ -22,23 +22,23 @@ def get_page_1_layout(df,data_path):
             dbc.Col([dcc.Dropdown(id='year_dropdown', multi=False, value=2022,
                                   className='bg-dark text-dark',
                                   options=[{'label': x, 'value': x}
-                                           for x in sorted(set(df.index.year))])], width={'size': 3, 'order': 2}
+                                           for x in sorted(set(df.index.year))])], width={'size': 1, 'order': 2}
                     ),
             dbc.Col([dcc.Dropdown(id='ticker_dropdown', multi=False, value='btcusd',
                                   className='bg-dark text-dark',
                                   options=[{'label': os.path.splitext(x)[0], 'value': os.path.splitext(x)[0]}
-                                           for x in sorted(os.listdir(data_path))])], width={'size': 3, 'order': 1})
+                                           for x in sorted(os.listdir(data_path))])], width={'size': 1, 'order': 1})
 
-        ], justify='center', className='g-0'),
+        ], justify='center'),
         dbc.Row([
 
-            dbc.Col([dcc.Checklist(id='check-box', options={True: 'Show Gaps'})], width={'size': 3, 'order': 1},
-                    align='left'),
+            dbc.Col([dcc.Checklist(id='check-box', options={True: 'Show Gaps'})], width={'size': 1, 'order': 1},
+                    align='center'),
 
-            dbc.Col([dcc.Checklist(id='vol-check', options={True: 'Enable Volatility'})], width={'size': 3, 'order': 1},
-                    align='left'),
+            dbc.Col([dcc.Checklist(id='vol-check', options={True: 'Enable Volatility'})], width={'size': 1, 'order': 2},
+                    align='center'),
 
-        ], justify='center', className='g-0'),
+        ], justify='center'),
         dbc.Row([dbc.Col([
             dcc.Graph(id='close-graph', figure={'layout': {'plot_bgcolor': '#d3d3d3', 'paper_bgcolor': '#111111'}},
                       style={'height': 675}), ], width={'size': 12, 'order': 1})
