@@ -1,15 +1,21 @@
-import pandas as pd
-import os
-import pathlib
 from pathlib import Path
+
+import pandas as pd
 import ta
 
-pd.options.mode.chained_assignment = None #Disable chained warning
-Path = Path.cwd() / 'Data'
+'''Module that loads in and works with data'''
 
-ticker = 'btcusd'
+pd.options.mode.chained_assignment = None #Disable chained warning
+Path = Path.cwd() / 'Data' #Grabs data path based on current working directory
+
+ticker = 'btcusd' #Default Ticker
 columns = ['time','open']
 lags = []
+
+'''Loads in data from Path location
+accepts: ticker (string)
+column names to load [list]
+returns: Dataframe with data from ticker/columns'''
 def get_data(ticker,columns):
     if ticker== None:
         ticker='btcusd'
@@ -22,13 +28,19 @@ def get_data(ticker,columns):
 
     return df
 
+'''Adds technical analysis to the dataframe
+Accepts: Dataframe w/ OHLCV information
+Returns: Dataframe'''
 def add_ta(df):
     df = ta.add_all_ta_features(df, open=f"open", high=f"high", low=f"low", close=f"close", volume=f"volume",
                                 fillna=True, vectorized=True)  # Add all the ta!
 
     return df
 
-#lags = [336,168,120,48,24]
+'''Creates lagged returns
+Accepts: Dataframe with OHLCV information
+List of lags to create returns with
+Returns: Dataframe w/ previous data + lagged returns'''
 def lagged_returns(df, lags):
     for lag in lags:
         df[f'return_{lag}h'] = df['close'].pct_change(lag, axis=0)

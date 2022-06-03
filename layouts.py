@@ -4,7 +4,11 @@ import dash_bootstrap_components as dbc
 from dash import dcc
 from dash import html
 
+'''Module containing functions that return pages layout'''
 
+'''Page 1 layout
+Accepts: Dataframe with OHLCV information, Path variable that leads to asset location (.csv files)
+Returns: Page 1 layout'''
 def get_page_1_layout(df, data_path):
     page_1_layout = dbc.Container([
         dbc.Row([dbc.Nav(
@@ -59,7 +63,9 @@ def get_page_1_layout(df, data_path):
     ], fluid=True)
     return page_1_layout
 
-
+'''Page 2 layout function
+Accepts: Path object to location of OHLCV .csv assets information
+Returns: Page 2 layout'''
 def get_page_2_layout(df, data_path):
     page_2_layout = dbc.Container([
 
@@ -99,22 +105,12 @@ def get_page_2_layout(df, data_path):
                 )], width={'size': 6, 'order': 2}),
 
         ], justify='center'),
-
-        # dbc.Row([
-        #     dbc.Col([
-        #         dcc.Graph(id='corr-element', figure={'layout': {'plot_bgcolor': '#d3d3d3', 'paper_bgcolor': '#111111'}},
-        #                   style={'height': 675})], width={'size': 12, 'order': 1}),
-        #
-        #     # dbc.Col([
-        #     #     dcc.Graph(id='corr-element', figure={'layout': {'plot_bgcolor': '#d3d3d3', 'paper_bgcolor': '#111111'}},
-        #     #               style={'height': 675})], width={'size': 8, 'order': 2}),
-        #
-        # ], justify='center')
-
     ], fluid=True)
     return page_2_layout
 
-
+'''Page 3 layout function
+Accepts: Path object to location of OHLCV .csv assets information
+Returns: Page 3 layout'''
 def get_page_3_layout(df, data_path):
     page_3_layout = dbc.Container([
         dbc.Row([dbc.Nav(
@@ -166,15 +162,5 @@ def get_page_3_layout(df, data_path):
 
         ], justify='center'),
 
-        dbc.Row([
-            dbc.Col([dcc.Textarea(
-                id='textarea_missingno', disabled=True,
-                value='',
-                style={'width': '100%', 'height': 80, 'color': 'orange'})], width={'size': 3, 'order': 1}),
-            dbc.Col([dcc.Textarea(
-                id='textarea_performance', disabled=True,
-                value='',
-                style={'width': '100%', 'height': 80, 'color': 'orange'})], width={'size': 4, 'order': 2}),
-        ], justify='evenly')
     ], fluid=True)
     return page_3_layout
