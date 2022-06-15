@@ -1,6 +1,6 @@
 # Crypto_Dash_Analysis_App
 
-A project to help inspect and visualize crypto and stock data;
+A project to help inspect and visualize crypto and stock data.
 
 ## Table of contents
 
@@ -12,7 +12,7 @@ A project to help inspect and visualize crypto and stock data;
 
 ### Introduction
 
-This projected is created to help visualize various crypto data, and to analyze performance of classic machine learning
+This project is created to help visualize various crypto data, and to analyze performance of classic machine learning
 algorithms when applied to financial time series.
 
 ### Technologies and libraries
