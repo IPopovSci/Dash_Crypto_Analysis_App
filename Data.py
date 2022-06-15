@@ -22,9 +22,6 @@ def get_data(ticker,columns):
     df = pd.read_csv(f'{Path}/{ticker}.csv',usecols=columns)
     df['time'] = pd.to_datetime(df['time'],format='%Y/%m/%d %H')
     df.set_index('time',inplace=True)
-    # if time:
-    #     df = df[df['time'].dt.year == time]
-
 
     return df
 

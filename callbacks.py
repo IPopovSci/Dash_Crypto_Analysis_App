@@ -190,7 +190,7 @@ def get_callbacks(app):
                         yield formula
 
             #Polynomial fit hover text
-            poly_hover = f'<b>Polynomial fit</b>' + f'<br>R^2 = {1 - r_value ** 2}'
+            poly_hover = f'<b>Polynomial fit</b>' + f'<br>R^2 = {r_value ** 2}'
 
             # Draw polynomial fit first
             fig2 = go.Figure(go.Scattergl(
@@ -199,7 +199,7 @@ def get_callbacks(app):
             ))
             fig2.data[0].line.color = "teal"
 
-            fig2 = px.scatter(data_frame=df, x=x_click, y=y_click, trendline="ols", trendline_color_override="orange")
+            fig2 = px.scatter(data_frame=df, x=x, y=y, trendline="ols", trendline_color_override="orange")
 
             # Draw the scatter plot/ linear trendline
 
