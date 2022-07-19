@@ -11,7 +11,7 @@ A project to help inspect and visualize crypto and stock data.
 * [Author](#Author)
 
 ### Introduction
-![alt text](screenshot.png "Description goes here")
+![alt text](screenshots/screenshot.png "First app page")
 
 This project is created to help visualize various crypto data, and to analyze performance of classic machine learning
 algorithms when applied to financial time series.
