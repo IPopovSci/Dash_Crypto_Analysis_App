@@ -19,5 +19,7 @@ app.layout = html.Div([
 
 get_callbacks(app) #Get the callbacks from callbacks.py
 
+server = app.server
+
 if __name__ == '__main__':
     app.run_server(debug=True,dev_tools_prune_errors=False)
