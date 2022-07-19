@@ -11,9 +11,13 @@ A project to help inspect and visualize crypto and stock data.
 * [Author](#Author)
 
 ### Introduction
+![alt text](screenshot.png "Description goes here")
 
 This project is created to help visualize various crypto data, and to analyze performance of classic machine learning
 algorithms when applied to financial time series.
+
+You can explore this app here: https://dashboard-financial-data.herokuapp.com
+Due to computational constrains, most methods on "Fitted Backtest" page won't work
 
 ### Technologies and libraries
 
